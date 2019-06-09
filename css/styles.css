@@ -1,3 +1,37 @@
-h1 {
-  color: blue;
+
+/*Globales*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*Header*/
+.site-header.inicio {
+  background-image: url(../img/header.jpg);
+  background-position: center;
+  background-size: cover; /*Fuerza que tome todo el espacio disponble en altura*/
+  height: 100vh; /*Para cubrir la altura de la pantalla*/
+  min-height: 600px;
+}
+
+.row {
+  display: flex; /*Flexbox para que se alineen los elementos de la fila*/
+  justify-content: space-between; /*Distntos tipos de espacio que se pueden dejar entre los elementos*/
+  padding-top: 30px;
+  align-items: center /*alineacion vertical*/
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none; /**Elimina decoracion de base del elemento HTML*/
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.navigation a:last-of-type{
+  margin-right: 0px;
+}
+
+.navigation a:hover{
+  color: #71B100;
 }
