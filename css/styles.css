@@ -1,37 +1,103 @@
+html {
+  font-size: 62.5% /***Para que 1rem = 10px ***/
+}
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3{
+  font-size: 3.0rem;
+}
+
+h4{
+  font-size: 2.6rem;
+}
 /*Globales*/
 .container {
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
+
+/*Utilidades (similar a bootstrap)*/
+.seccion {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.fw-300{
+  font-weight: 300;
+}
+
+.texto-centrado{
+  text-align: center;
+}
 /*Header*/
+.contenido-header {
+  height: 100%;
+  display:flex; /*Flexbox solo afecta al primer nivel de hijos... es decir agecta a la class row y al h1 */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenido-header h1 {
+  color: white;
+  max-width: 60rem;
+  padding-bottom: 2rem;
+  line-height: 2;
+}
 .site-header.inicio {
   background-image: url(../img/header.jpg);
   background-position: center;
   background-size: cover; /*Fuerza que tome todo el espacio disponble en altura*/
   height: 100vh; /*Para cubrir la altura de la pantalla*/
-  min-height: 600px;
+  min-height: 60rem;
 }
 
 .row {
   display: flex; /*Flexbox para que se alineen los elementos de la fila*/
   justify-content: space-between; /*Distntos tipos de espacio que se pueden dejar entre los elementos*/
-  padding-top: 30px;
+  padding-top: 3rem;
   align-items: center /*alineacion vertical*/
 }
 
 .navigation a {
   color: white;
   text-decoration: none; /**Elimina decoracion de base del elemento HTML*/
-  font-size: 18px;
-  margin-right: 20px;
+  font-size: 1.8rem;
+  margin-right: 2rem;
 }
 
 .navigation a:last-of-type{
-  margin-right: 0px;
+  margin-right: 0rem;
 }
 
 .navigation a:hover{
   color: #71B100;
+}
+
+/** MAS SOBRE NOSOTROS**/
+.row-iconos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icono {
+  flex-basis: calc(33.33% - 1rem); /**Calc: permuite hacer operaciones matematicas*/
+  text-align: center;
+  line-height: 2;
+}
+
+.icono h3 {
+  text-transform: uppercase;
 }
