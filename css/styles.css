@@ -1,12 +1,32 @@
 html {
-  font-size: 62.5% /***Para que 1rem = 10px ***/
+  font-size: 62.5%; /***Para que 1rem = 10px ***/
+  box-sizing: border-box; /*sale de aca https://www.paulirish.com/2012/box-sizing-border-box-ftw/*/
+}
+
+*, *:before, *:after {
+  box-sizing: inherit; /*sale de aca https://www.paulirish.com/2012/box-sizing-border-box-ftw/*/
 }
 
 body {
   font-family: 'Lato', sans-serif;
   font-size: 1.6rem;
+  line-height: 2;
 }
 
+/*Globales*/
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.container-centrado {
+  max-width: 80rem;
+}
+
+
+img {
+  max-width: 100%;
+}
 h1 {
   font-size: 3.8rem;
 }
@@ -22,11 +42,6 @@ h3{
 h4{
   font-size: 2.6rem;
 }
-/*Globales*/
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-}
 
 
 /*Utilidades (similar a bootstrap)*/
@@ -39,9 +54,51 @@ h4{
   font-weight: 300;
 }
 
+.fw-400{
+  font-weight: 400;
+}
+
+.fw-700{
+  font-weight: 700;
+}
+
+.fw-900{
+  font-weight: 900;
+}
+
 .texto-centrado{
   text-align: center;
 }
+
+.d-block{
+  display:block !important;
+}
+
+/* Botones */
+.boton {
+  text-decoration: none;
+  text-align: center;
+  padding: 1.5rem 3rem;
+  margin-top: 3rem;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 1.5rem;
+  border:none;
+}
+
+.boton:hover{
+  cursor: pointer;
+}
+
+.boton-amarillo {
+  background-color: #E08709;
+}
+
+.boton-verde {
+  background-color: #71B100;
+}
+
 /*Header*/
 .contenido-header {
   height: 100%;
@@ -56,6 +113,13 @@ h4{
   padding-bottom: 2rem;
   line-height: 2;
 }
+
+.site-header {
+  background-color: #333333;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
 .site-header.inicio {
   background-image: url(../img/header.jpg);
   background-position: center;
@@ -100,4 +164,254 @@ h4{
 
 .icono h3 {
   text-transform: uppercase;
+}
+
+/**************** ANUNCIOS *****************/
+
+.row-anuncios {
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.anuncio {
+  flex-basis: calc(33.33% - 1rem); /**Calc: permuite hacer operaciones matematicas*/
+  border: 0.1rem solid #B5B5B5;
+  background-color: #f5f2f2;
+}
+
+.contenido-anuncio {
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 2;
+}
+
+.contenido-anuncio h3, .contenido-anuncio p {
+  margin: 0;
+}
+.precio {
+  color: #71B100;
+}
+
+.ver-todas{
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.row-iconos-anuncios{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  flex:1;
+  max-width: 50rem;
+}
+
+.row-iconos-anuncios li{
+  display: flex;
+}
+
+.row-iconos-anuncios img{
+  margin-right: 2rem;
+}
+
+
+/* CONTACTO */
+
+.contacto {
+  background-image: url(../img/encuentra.jpg);
+  background-position: center;
+  background-size: cover; /*Fuerza que tome todo el espacio disponble en altura*/
+  height: 40rem;
+  align-items: center;
+  display: flex;
+}
+
+.contacto-contenido {
+  flex:1;
+  color: white;
+}
+
+.contacto-contenido p{
+  font-size: 1.8rem;
+}
+
+
+/* Blog/testimoniales*/
+
+.blog-testimoniales{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.blog-testimoniales .blog{
+  flex-basis: 60%;
+}
+
+.blog-testimoniales .testimoniales{
+  flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog {
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.entrada-blog:last-of-type{
+  margin-bottom: 0;
+}
+.entrada-blog .imagen-blog{
+  flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada{
+  flex-basis: calc(60% - 2rem);
+}
+
+.texto-entrada a {
+  color: black;
+  text-decoration: none;
+}
+
+.texto-entrada h4 {
+  line-height: 1.4;
+  margin: 0;
+}
+
+.texto-entrada h4::after {
+  content: '';
+  display: block;
+  background-color: #71B100;
+  width: 15rem;
+  height: .5rem;
+  margin-top: 1rem;
+}
+
+.texto-entrada span {
+  color: #E08709;
+}
+
+/*Testimoniales*/
+
+.texto-testimoniales {
+  background-color: #71B100;
+  color: white;
+  font-size: 2.4rem;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.texto-testimoniales p {
+  text-align: right;
+}
+
+.texto-testimoniales blockquote::before{
+  content: '';
+  background-image: url(../img/comilla.svg);
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+}
+
+.texto-testimoniales blockquote{
+  position: relative;
+  padding-left: 4rem;
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #333333;
+  margin:0;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-contenido p{
+  color: white;
+}
+
+/**************** NOSOTROS.HTML ***********/
+/*Nosotros*/
+
+.nosotros{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+}
+
+.texto-nosotros blockquote{
+  margin:0;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+/**************** ANUNCIOS.HTML ***********/
+
+.contenedor-anuncios{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+/***************PROPIEDADS****************/
+
+.precio-iconos {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/**************CONTACTO.HTML**************/
+
+legend {
+  font-size: 2.4rem;
+  color: #333333;
+}
+label {
+  display: block;
+  text-transform: uppercase;
+}
+
+.formulario p {
+  font-size: 1.2rem;
+}
+
+
+.forma-contacto {
+  display: flex;
+  justify-content: space-between;
+  max-width: 30rem;
+  align-items: center;
+}
+
+input:not([type="submit"]),
+textarea,
+select {
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  background-color: #e1e1e1;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+input[type="radio"] {
+  margin-bottom: 0;
+}
+textarea {
+  height: 20rem;
 }
